@@ -59,8 +59,8 @@ build:
     - docker cp build:${WORK_DIR}/qcom-6.6.116-qli.1.7-ver.1.1_robotics-sdk-1.1_c2_20.04/NO.LOGIN.BINARY.LICENSE.QTI.pdf /target/qcs8275-iq-8275-evk-pro-sku/
     # - zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku
     - zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-image-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku/qcom-robotics-full-image /target/qcs8275-iq-8275-evk-pro-sku/NOTICE /target/qcs8275-iq-8275-evk-pro-sku/NO.LOGIN.BINARY.LICENSE.QTI.pdf
-	- zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-artifacts-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku/qirpsdk_artifacts /target/qcs8275-iq-8275-evk-pro-sku/NOTICE /target/qcs8275-iq-8275-evk-pro-sku/NO.LOGIN.BINARY.LICENSE.QTI.pdf
-	- zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-esdk-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku /target/qcs8275-iq-8275-evk-pro-sku/sdk -i /target/qcs8275-iq-8275-evk-pro-sku/sdk/*-toolchain-ext-*.sh -i /target/qcs8275-iq-8275-evk-pro-sku/NOTICE -i /target/qcs8275-iq-8275-evk-pro-sku/NO.LOGIN.BINARY.LICENSE.QTI.pdf
+    - zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-artifacts-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku/qirpsdk_artifacts /target/qcs8275-iq-8275-evk-pro-sku/NOTICE /target/qcs8275-iq-8275-evk-pro-sku/NO.LOGIN.BINARY.LICENSE.QTI.pdf
+    - zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-esdk-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku /target/qcs8275-iq-8275-evk-pro-sku/sdk -i /target/qcs8275-iq-8275-evk-pro-sku/sdk/*-toolchain-ext-*.sh -i /target/qcs8275-iq-8275-evk-pro-sku/NOTICE -i /target/qcs8275-iq-8275-evk-pro-sku/NO.LOGIN.BINARY.LICENSE.QTI.pdf
     - zip -r arm-qcom-6.6.116-QLI.1.7-Ver.1.1_robotics-sdk-standardsdk-1.1.zip /target/qcs8275-iq-8275-evk-pro-sku /target/qcs8275-iq-8275-evk-pro-sku/sdk -i /target/qcs8275-iq-8275-evk-pro-sku/sdk/*-toolchain-*.sh -x /target/qcs8275-iq-8275-evk-pro-sku/sdk/*-toolchain-ext-*.sh -i /target/qcs8275-iq-8275-evk-pro-sku/NOTICE -i /target/qcs8275-iq-8275-evk-pro-sku/NO.LOGIN.BINARY.LICENSE.QTI.pdf
     - docker rm build
     - /usr/local/bin/jf rt ping
