@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 LABEL maintainer="qswcct.devops@qti.qualcomm.com"
 
 ENV \
@@ -18,6 +18,8 @@ RUN \
         debianutils \
         diffstat \
         gawk \
+        tar \
+        tree \
         gcc \
         git \
         iputils-ping \
@@ -27,7 +29,6 @@ RUN \
         locales \
         mesa-common-dev \
         openssh-client \
-        pylint3 \
         python3 \
         python3-git \
         python3-jinja2 \
@@ -42,14 +43,14 @@ RUN \
         vim \
         wget \
         xterm \
-        xz-utils \
         python3-yaml \
+        xz-utils \
         libgtest-dev \
         zstd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     # Set python to python3.8.1
-    && update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1 \
+    #&& update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1 \
     # Generate locales
     && locale-gen en_US.UTF-8 \
     # Update default sh
@@ -59,6 +60,8 @@ RUN \
 RUN \
     wget -qP /usr/local/bin https://storage.googleapis.com/git-repo-downloads/repo \
     && chmod a+x /usr/local/bin/repo
+
+RUN pip3 install --no-cache-dir kas
 
 # Configure non-root user omniscan
 ARG USER=codelinaro
@@ -80,13 +83,14 @@ RUN \
 USER $USER
 WORKDIR $WORKDIR
 
+
 # Configure .gitconfig
 RUN \
     git config --global user.email $USER@codelinaro.com \
     && git config --global user.name $USER
 
 # Copy notice generation script
-RUN \
-    git clone https://git.codelinaro.org/clo/le/qcom-notice.git scripts
+#RUN \
+#    git clone https://git.codelinaro.org/clo/le/qcom-notice.git scripts
 
-ENTRYPOINT ["/bin/bash", "./scripts/sync_build_gen_notice.sh"]
+#ENTRYPOINT ["/bin/bash", "./scripts/sync_build_kas.sh"]
