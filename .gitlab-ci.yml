@@ -4,7 +4,7 @@ default:
     - dockerd -l fatal &
     - sleep 5
   tags:
-    - amd64-runner
+    - arm64-runner
 
 variables:
   KUBERNETES_CPU_REQUEST: 60
@@ -48,5 +48,6 @@ build:
 
     # Docker Build & Run
     - docker build --build-arg USER=${USER} --build-arg UID=${UID} --build-arg GID=${GID} --no-cache -t ${DOCKER_TAG} .
+    - ln -sf /usr/bin/tar /bin/tar
     - tar --version
     - which tar
